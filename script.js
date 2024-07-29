@@ -10,7 +10,7 @@ let minute = current_time.getMinutes();
 
 // Birthday time
 
-let birthday = new Date(2024, 6, 30, 23, 59);
+let birthday = new Date(2024, 6, 29, 16, 28);
 let birthday_month = birthday.getMonth();
 let birthday_day = birthday.getDate();
 let birthday_hour = birthday.getHours();
@@ -21,7 +21,12 @@ let days_left = birthday_day - day;
 let hours_left = birthday_hour - hour;
 let minutes_left = birthday_minute - minute;
 
-if (current_time === birthday) {
+if (
+  months_left <= 0 &&
+  days_left <= 0 &&
+  hours_left <= 0 &&
+  minutes_left <= 0
+) {
   counter.innerHTML =
     "Woohoo!!!!!!!! Nice job making it so far! Double digits.";
 } else {
